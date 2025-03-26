@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp {
 	class Program {
-		private static Queue<Robot> _robots = new Queue<Robot>();
+		private static ExampleQueue<Robot> _robots = new ExampleQueue<Robot>();
 		static void Main(string[] args) {
 			
 				try
@@ -22,7 +22,7 @@ namespace ConsoleApp {
 
 		}
 		private static void Demo1() {
-			_robots = new Queue<Robot>();
+			_robots = new ExampleQueue<Robot>();
 			SetupTeam1();
 			SetupTeam2();
 			Robot robot;
@@ -39,7 +39,7 @@ namespace ConsoleApp {
 		}
 
 		private static void Demo2() {
-			_robots = new Queue<Robot>();
+			_robots = new ExampleQueue<Robot>();
 			Task task1 = Task.Run(() => SetupTeam1());
 			Task task2 = Task.Run(() => SetupTeam2());
 			Task.WaitAll(task1, task2);
